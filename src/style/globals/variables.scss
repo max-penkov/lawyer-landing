@@ -1,0 +1,182 @@
+$main-color: #030303;
+$brand-color: #031481;
+$light-grey: #a7a9ac;
+$normal-grey: #c7c7c7;
+$dark-grey: #737373;
+$middle-grey: #e8e8e8;
+
+//$header-color: #737373;
+$header-bg-color: #f8f8f9;
+$custom-green: #00b856;
+$box-green: #00b956;
+$box-green-p: #b3eacd;
+$brand-text: #030303;
+//$vacancy-desc-text: #4c4c4c;
+//$header-color-text: #8a91ba;
+//$member-text: #5b5b5b;
+$footer-color-header-text: #8189c0;
+$footer-header: #b3b8d9;
+//$solid-gray: #9a9a9a;
+
+//$vacancies-main-color: #2a378b;
+//$slider-bg-color: #4957b2;
+//$slider-blue-color: #0063c6;
+//$slider-lilac-color: #50439b;
+
+// colors
+$black: #000;
+$white: #fff;
+$danger: #FF3745;
+$secondary: #BCBCBD;
+$success: #00b956;
+$primary: #0a1e84;
+
+// links
+$link-color: $primary;
+$link-hover-color: $danger;
+
+// basic vars
+$enable-shadows: false;
+$enable-transitions: true;
+$enable-rounded: true;
+$animation-speed: .3s;
+$animation-speed-slow: 1s;
+
+$font-family-cyr: "Museo-Sans", sans-serif;
+$font-family-base: $font-family-cyr;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1.2rem; // fake var
+$font-weight-base: 500;
+$font-weight-normal: $font-weight-base;
+$font-weight-bold: 700;
+
+$line-height-base: 1.65;
+$line-height-lg: 1.65;
+$line-height-sm: 1.65;
+
+// btns
+$btn-box-shadow: 0px 10px 10px -4px rgba(76, 45, 3, 0.55);
+$btn-line-height: 2rem;
+$btn-line-height-sm: 2.25rem;
+$btn-padding-y: 0;
+$btn-padding-x: 20px;
+$btn-padding-y-sm: 0;
+$btn-padding-x-sm: 20px;
+$btn-border-radius: 25px;
+$btn-border-radius-sm: 25px;
+$btn-border-radius-lg: 25px;
+$btn-disabled-opacity: 1;
+
+$base-spacer: 1.25rem;
+$body-bg: $header-bg-color;
+
+$grid-columns: 24;
+$grid-breakpoints: (
+	xs: 0,
+	sm: 320px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1200px
+);
+
+$container-max-widths: (
+	//sm: 668px,
+	//md: 924px,
+	//lg: 1170px,
+	sm: 668px,
+	md: 668px,
+	lg: 1170px,
+	xl: 1170px
+);
+
+// navbar
+$navbar-padding-y: 8px;
+$navbar-padding-x: 0;
+$navbar-light-color: $light-grey;
+$navbar-light-hover-color: $danger;
+$navbar-light-active-color: $black;
+$navbar-brand-font-size: 1.2rem;
+$navbar-brand-padding-y: 0;
+
+// link
+$link-hover-decoration: none;
+
+// nav
+$nav-border-color: #dfdfe1;
+$nav-link-color: $dark-grey;
+$nav-link-height: 0.9rem;
+$nav-link-padding-x: 0;
+$nav-link-padding-y: 2rem;
+
+// type
+$h1-font-size: 3.8rem;
+$h2-font-size: 3rem;
+$h4-font-size: 2rem;
+
+// toggler
+$navbar-light-toggler-border-color: transparent;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%230a1e84' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
+// slick
+$slick-dot-character: "";
+$slick-dot-color: $normal-grey;
+$slick-dot-color-active: $black;
+$slick-opacity-not-active: 1;
+$slick-opacity-on-hover: 1;
+
+// pagination
+$pagination-line-height: 30px;
+$pagination-padding-y: 0;
+$pagination-bg: transparent;
+$pagination-border-color: transparent;
+$pagination-hover-bg: transparent;
+$pagination-hover-border-color: transparent;
+$pagination-active-bg: $middle-grey;
+$pagination-active-color: $main-color;
+$pagination-active-border-color: transparent;
+$pagination-disabled-bg: transparent;
+$pagination-disabled-border-color: transparent;
+
+// checkboxes
+$custom-checkbox-indicator-border-radius: 0;
+$custom-checkbox-indicator-indeterminate-box-shadow: none;
+$custom-control-indicator-bg: $white;
+$custom-control-indicator-active-bg: $white;
+$custom-control-indicator-box-shadow: none;
+$custom-control-indicator-focus-box-shadow: none;
+$custom-control-indicator-active-box-shadow: none;
+$custom-control-indicator-checked-box-shadow: none;
+
+// form
+$input-color: $black;
+$input-placeholder-color: $light-grey;
+$input-padding-y: 0.7rem;
+$input-border-radius: 0;
+$input-border-color: #dadada;
+
+// close
+$close-font-weight: $font-weight-normal;
+$close-color: $light-grey;
+$close-text-shadow: none;
+
+// dropdown
+$dropdown-border-radius: 0;
+$dropdown-border-width: 0;
+$dropdown-item-padding-x: 25px;
+$dropdown-item-padding-y: 6px;
+$dropdown-link-color: $dark-grey;
+$dropdown-header-color: $black;
+$dropdown-link-hover-bg: rgba($black, .1);
+$dropdown-link-hover-color: $black;
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+$dropdown-link-active-color: $dropdown-link-hover-color;
+
+// modals
+$modal-content-border-radius: 0;
+$modal-footer-border-width: 0;
+$modal-header-border-width: 0;
+$modal-header-padding: 0;
+$modal-inner-padding: 0;
+$modal-md: 550px;
+$modal-lg: 567px;

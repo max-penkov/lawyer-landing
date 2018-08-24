@@ -1,0 +1,101 @@
+.btn {
+	&-socials {
+		border-radius: 0;
+		height: 50px;
+		font-size: 1.125rem;
+		line-height: 50px;
+
+		@include hover {
+			.icon {
+				animation:
+					fadeOut .4s 1,
+					moveRight .4s 1,
+					moveReverse 0s 1 .4s,
+					moveForward .4s 1 .5s,
+					fadeOut .4s 1 .4s alternate-reverse
+				;
+			}
+		}
+	}
+
+	&-success {
+		@include hover {
+			.icon {
+				animation:
+					fadeOut .4s 1,
+					moveRight .4s 1,
+					moveReverse 0s 1 .4s,
+					moveForward .4s 1 .5s,
+					fadeOut .4s 1 .4s alternate-reverse
+				;
+			}
+		}
+	}
+
+	&-danger {
+
+		&:disabled, &.disabled {
+			background-color: $secondary;
+			border-color: $secondary;
+			color: $white;
+		}
+	}
+
+	&-login {
+		.icon {
+			margin-bottom: -3px;
+			margin-right: 10px;
+		}
+
+		@include hover {
+			@extend .btn-outline-primary;
+		}
+	}
+
+	&-company {
+		font-size: 1.2rem;
+		color: $black;
+		padding: 0 ($grid-gutter-width / 2);
+		margin-bottom: 20px;
+	}
+
+	&-hero-vacancies {
+		padding: 15px 0;
+		font-size: 1.125rem;
+		margin: 45px 0;
+	}
+
+	&-no-border-radius {
+		border-radius: 0 !important;
+	}
+
+	&-block-sm {
+		@extend .btn-block;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.btn {
+		&-socials {
+			height: 90px;
+			font-size: 1.8rem;
+			line-height: 90px;
+		}
+
+		&-block-sm {
+			width: auto;
+			display: inline-block;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.btn {
+		&-company {
+			margin: 0;
+			padding: 0 20px;
+			font-size: 0.875rem;
+			color: initial;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.animate {
+	&-on {
+		&-scroll {
+			@include transition(transform 1s ease-out .2s, opacity 1s ease-out .2s);
+			will-change: opacity, transform;
+			opacity: 0;
+			transform: translateX(-25px);
+
+			&.complete {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+	}
+}

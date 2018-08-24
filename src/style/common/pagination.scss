@@ -1,0 +1,20 @@
+.pagination {
+	margin: 30px 0 150px;
+}
+
+.page {
+	&-item {
+
+		&:first-child {
+			margin-right: 25px;
+		}
+
+		&:last-child {
+			margin-left: 25px;
+		}
+	}
+
+	&-link {
+		@include border-radius(50%);
+	}
+}

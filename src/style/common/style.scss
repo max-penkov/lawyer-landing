@@ -1,0 +1,124 @@
+body {;
+	color: $main-color;
+	font-synthesis: none;
+	-moz-font-feature-settings: 'kern';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	direction: ltr;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+
+	&-title {
+		margin-top: 40px;
+		margin-bottom: 50px;
+	}
+}
+
+*:focus {
+	outline: none !important;
+}
+
+h1, .h1 {
+	font-size: 1.575rem;
+}
+
+h2, .h2 {
+	font-size: 1.45rem
+}
+
+h4, .h4 {
+	font-size: 1.25rem;
+}
+
+.container-expanded-sm, .container-expanded-md {
+	max-width: none;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.container-replace-sm {
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: ($grid-gutter-width / 2);
+	padding-left: ($grid-gutter-width / 2);
+	width: map_get($container-max-widths, sm);
+}
+
+.no-gutters-sm, .no-gutters-md {
+	margin-right: 0;
+	margin-left: 0;
+
+	& > .col, & > [class*="col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	h1, .h1 {
+		font-size: 2.8rem;
+	}
+
+	h2, .h2 {
+		font-size: 2.2rem;
+	}
+
+	h4, .h4 {
+		font-size: 1.5rem;
+	}
+
+	.container-expanded-sm {
+		max-width: map_get($container-max-widths, md);
+		padding-right: ($grid-gutter-width / 2);
+		padding-left: ($grid-gutter-width / 2);
+	}
+
+	.no-gutters-sm {
+		margin-right: -($grid-gutter-width / 2);
+		margin-left: -($grid-gutter-width / 2);
+
+		& > .col, & > [class*="col-"] {
+			padding-right: ($grid-gutter-width / 2);
+			padding-left: ($grid-gutter-width / 2);
+		}
+	}
+
+	.container-replace-sm {
+		padding-right: 0;
+		padding-left: 0;
+		width: auto;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	h1, .h1 {
+		font-size: 3.8rem;
+	}
+
+	h2, .h2 {
+		font-size: 3.125rem;
+	}
+
+	h4, .h4 {
+		font-size: 2rem;
+	}
+
+	.container-expanded-sm, .container-expanded-md {
+		max-width: map_get($container-max-widths, lg);
+		padding-right: ($grid-gutter-width / 2);
+		padding-left: ($grid-gutter-width / 2);
+	}
+
+	.no-gutters-md {
+		margin-right: -($grid-gutter-width / 2);
+		margin-left: -($grid-gutter-width / 2);
+
+		& > .col, & > [class*="col-"] {
+			padding-right: ($grid-gutter-width / 2);
+			padding-left: ($grid-gutter-width / 2);
+		}
+	}
+}

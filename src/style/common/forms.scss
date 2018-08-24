@@ -1,0 +1,32 @@
+.form {
+	&-group {
+		position: relative;
+	}
+
+	&-control {
+
+		&:focus, &:focus:hover {
+			border-color: $primary;
+		}
+
+		@include hover {
+			border-color: #b0b0b0;
+		}
+	}
+}
+
+label {
+	color: rgba($main-color, .5);
+	font-size: 0.925rem;
+	margin-bottom: 0;
+}
+
+.invalid-tooltip {
+	//color: $main-color;
+	//background-color: $white;
+	//font-size: 13px;
+	//line-height: 1;
+	//padding: 10px 20px;
+	//@include border-radius(10px);
+	//box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+}

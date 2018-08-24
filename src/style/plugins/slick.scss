@@ -1,0 +1,113 @@
+.slick {
+
+	&-slide {
+		//opacity: 0.3;
+		@include transition;
+	}
+
+	&-active {
+		opacity: 1;
+	}
+
+	&-dots {
+		bottom: -60px;
+
+		li {
+			width: 25px;
+			height: 2px;
+
+			button {
+				width: 25px;
+				height: 2px;
+				padding: 0;
+
+				&:before {
+					@include text-hide;
+					width: 25px;
+					height: 2px;
+					background-color: $slick-dot-color;
+				}
+			}
+
+			&.slick-active {
+				button {
+
+					&:before {
+						background-color: $slick-dot-color-active;
+					}
+				}
+			}
+		}
+	}
+
+	&-prev, &-next {
+		@include size(40px);
+		@include border-radius(50%);
+		transform: translateY(0);
+		top: 210px;
+		background-color: $white;
+		z-index: 1;
+
+		.icon {
+			@include center-xy;
+
+			@include hover-focus {
+				opacity: 1;
+			}
+		}
+
+		@include hover-focus {
+			background-color: $white;
+		}
+
+		&:before {
+			content: '';
+		}
+	}
+
+	&-prev {
+		left: 25px;
+	}
+
+	&-next {
+		right: 25px;
+	}
+}
+
+@include media-breakpoint-up(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+	.slick {
+
+		&-slide {
+			opacity: 1;
+		}
+
+		&-prev, &-next {
+			@include size(25px);
+			top: 242px;
+			background-color: transparent;
+
+			@include hover-focus {
+				background-color: transparent;
+			}
+
+			.icon {
+
+				@include hover-focus {
+					opacity: .5;
+				}
+			}
+		}
+
+		&-prev {
+			left: -25px;
+		}
+
+		&-next {
+			right: -25px;
+		}
+	}
+}

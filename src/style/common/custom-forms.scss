@@ -1,0 +1,45 @@
+.custom {
+	&-control {
+		@include text-hide;
+		padding-left: 30px;
+		min-height: auto;
+
+		&-label {
+			@extend .text-left;
+			@extend .font-weight-normal;
+			font-family: $font-family-base;
+			color: rgba($main-color, .5);
+			line-height: 20px;
+			font-size: .875rem;
+
+			&:before {
+				top: 0;
+				@include size(20px);
+				border: 1px solid $middle-grey;
+			}
+
+
+			@include hover-focus {
+				&:before {
+					border-color: #b0b0b0;
+				}
+			}
+
+			&:after {
+				top: 0;
+				@include size(20px);
+			}
+		}
+	}
+
+	&-checkbox {
+		.custom-control-input:checked ~ .custom-control-label {
+			color: $primary;
+		}
+		.custom-control-label {
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.dropdown {
+	&-header {
+		font-size: .95rem;
+	}
+
+	&-item {
+		position: relative;
+		font-size: .825rem;
+		padding-left: 51px;
+
+		.icon {
+			position: absolute;
+			left: 24px;
+			top: 7px;
+		}
+	}
+
+	&-menu {
+		//left: auto;
+		//right: 20px;
+	}
+}

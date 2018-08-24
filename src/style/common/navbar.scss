@@ -1,0 +1,169 @@
+$brand-zindex: 1;
+$search-padding-x: 50px;
+$search-padding-y: 0.375rem;
+
+.navbar {
+
+	&-nav {
+		.nav-link {
+			font-size: 0.9375rem;
+		}
+	}
+
+	&-light {
+		background: $white;
+
+		.navbar-toggler {
+			color: $main-color;
+		}
+
+		.navbar-brand {
+			color: $brand-color;
+
+			@include hover-focus {
+				color: $danger;
+			}
+		}
+	}
+
+	&-brand {
+		font-size: 0.9rem;
+		line-height: 32px;
+		padding-left: 40px;
+		position: relative;
+
+		.icon {
+			@include center-y;
+			left: 0;
+			width: 28px;
+			height: 20px;
+		}
+	}
+
+	&-toggler {
+		padding: 0 ($grid-gutter-width / 2) 0 11px;
+	}
+
+	&-user {
+		position: relative;
+
+		.icon {
+			position: absolute;
+			top: -9px;
+			right: 15px;
+		}
+	}
+
+	.brand {
+		@include center-x;
+		top: 7px;
+		z-index: $brand-zindex;
+	}
+
+	&-expand-lg .navbar-nav .nav-link {
+		padding: 15px;
+	}
+
+	&-search {
+		position: relative;
+
+		&-icon, &-close {
+			position: absolute;
+			z-index: $brand-zindex + 1;
+			left: 30px;
+			top: 8px;
+		}
+
+		&-close {
+			display: none;
+		}
+
+		&-form {
+			margin: 30px ($grid-gutter-width / 2) 20px;
+
+			&-input {
+				opacity: 1;
+				position: relative;
+				padding: $search-padding-y $search-padding-x;
+				border: 0;
+				background-color: $header-bg-color;
+				@include border-radius(25px);
+			}
+		}
+	}
+
+	&-dropdown {
+		box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.2);
+	}
+}
+
+
+@include media-breakpoint-up(md) {
+	.navbar {
+
+		&-brand {
+			font-size: 1.1rem;
+			padding-left: 55px;
+
+			.icon {
+				width: 30px;
+				height: 22px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.navbar {
+
+		&-brand {
+			font-size: 1.38rem;
+
+			.icon {
+				width: 37px;
+				height: 28px;
+			}
+		}
+
+		.brand {
+			min-width: 250px;
+			position: relative;
+			left: auto;
+			top: auto;
+			transform: translateX(0);
+		}
+
+		&-search {
+			position: relative;
+
+			&-icon, &-close {
+				position: absolute;
+				z-index: $brand-zindex + 1;
+				left: -20px;
+				top: -9px;
+			}
+
+			&-close {
+				display: block;
+				left: 595px;
+				top: -14px;
+			}
+
+			&-form {
+				margin: 0;
+
+				&-input {
+					padding-left: 0;
+					padding-right: 0;
+					width: 0;
+					opacity: 0;
+					//width: 690px;
+					position: absolute;
+					z-index: $brand-zindex;
+					top: -19px;
+					left: -40px;
+				}
+			}
+		}
+	}
+}

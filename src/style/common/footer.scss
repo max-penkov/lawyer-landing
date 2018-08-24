@@ -1,0 +1,190 @@
+.footer {
+	background-color: $white;
+	padding-top: 60px;
+
+	&__header {
+		line-height: 1.3;
+		font-size: 1.4rem;
+		padding-bottom: 10px;
+		color: $footer-header;
+	}
+
+	&__link {
+		display: block;
+		font-size: 0.9rem;
+	}
+
+	&__block {
+		margin-bottom: 25px;
+	}
+
+	&__logo {
+
+		.icon {
+			float: left;
+		}
+
+		&-text {
+			margin-left: 60px;
+			font-size: 0.875rem;
+			line-height: 20px;
+			color: $footer-header;
+
+			span {
+				&:nth-child(1) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__rules {
+
+		&-item {
+			padding-left: 30px;
+			line-height: 1.273;
+			font-size: 0.7rem;
+			margin-bottom: 30px;
+			position: relative;
+			display: inline-block;
+			max-width: 150px;
+			@include transition;
+
+			.icon {
+				position: absolute;
+				left: 0;
+			}
+
+			&:hover {
+				.icon {
+					fill: $danger;
+				}
+			}
+		}
+	}
+
+	&-bottom {
+		background-color: $header-bg-color;
+		padding: 15px;
+		font-size: 0.7rem;
+	}
+
+	&__social {
+		@include size(46px);
+		display: block;
+		border-radius: 50%;
+		background-color: $danger;
+		position: relative;
+		@include transition;
+
+		@include hover {
+			background-color: $primary;
+		}
+
+		.icon {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate3d(-50%, -50%, 0);
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.footer {
+		min-height: auto;
+		padding-top: 50px;
+		padding-bottom: 20px;
+
+		&__header {
+			font-size: 18px;
+			padding-bottom: 15px;
+		}
+
+		&__logo {
+
+			.icon {
+				float: none;
+				margin-bottom: 50px;
+				width: 66px;
+				height: 48px;
+			}
+
+			&-text {
+				margin-left: 0;
+				font-size: 15px;
+			}
+		}
+
+		&__rules {
+			margin-bottom: 0;
+
+			&-item {
+				margin-right: 20px;
+			}
+		}
+
+		&__others {
+			min-height: auto;
+		}
+
+		&-bottom {
+			font-size: 0.8rem;
+		}
+
+		&__social {
+			@include size(36px);
+
+			.icon {
+				width: 16px;
+				height: 17px;
+			}
+
+			&-list {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.footer {
+
+		&__logo {
+
+			.icon {
+				margin-bottom: 25px;
+			}
+
+			&-text {
+
+				span {
+					&:first-child {
+						display: inline;
+					}
+				}
+			}
+		}
+
+		&__header {
+			font-size: 23px;
+			padding-bottom: 20px;
+		}
+
+		&__social {
+			@include size(47px);
+
+			.icon {
+				width: 20px;
+				height: 23px;
+			}
+		}
+
+		&__rules {
+
+			&-item {
+				margin-right: 0;
+			}
+		}
+	}
+}

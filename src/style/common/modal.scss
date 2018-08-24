@@ -1,0 +1,106 @@
+$modal-sm-padding: 20px;
+$modal-md-padding: 40px;
+$modal-lg-padding: 50px;
+
+.modal {
+	&-header {
+		padding: $modal-sm-padding;
+	}
+
+	&-title {
+		line-height: 28px;
+	}
+
+	&-body {
+		padding: 0 $modal-sm-padding;
+	}
+
+	&-footer {
+		padding: $modal-sm-padding $modal-sm-padding 40px;
+	}
+
+	&-vacancy {
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+
+	&-form {
+
+		&-upload {
+			margin-top: 15px;
+
+			.btn {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.modal {
+
+		&-header {
+			padding: 50px $modal-md-padding $modal-sm-padding;
+		}
+
+		&-title {
+			font-size: 25px;
+		}
+
+		&-body {
+			padding: 0 $modal-md-padding;
+		}
+
+		&-footer {
+			padding: $modal-sm-padding $modal-md-padding 50px;
+		}
+
+		&-close {
+			position: absolute;
+			top: 0;
+			right: -58px;
+		}
+
+		&-form {
+
+			&-upload {
+				position: relative;
+				margin-top: 0;
+			}
+
+			&-choose {
+				position: absolute;
+				left: -5px;
+				bottom: 15px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.modal {
+
+		&-vacancy {
+			font-size: 1.25rem;
+		}
+
+		&-header {
+			padding-left: $modal-lg-padding;
+			padding-right: $modal-lg-padding;
+		}
+
+		&-body {
+			padding-left: $modal-lg-padding;
+			padding-right: $modal-lg-padding;
+		}
+
+		&-footer {
+			padding-left: $modal-lg-padding;
+			padding-right: $modal-lg-padding;
+		}
+
+		&-title {
+			font-size: 30px;
+		}
+	}
+}
