@@ -7,9 +7,8 @@ class App extends Component {
 		return (
 			<div className='container-fluid'>
 				<div className="row">
-					<div className="col"><Header/>
-						{renderRoutes(this.props.route.routes)}
-					</div>
+					<Header/>
+					{renderRoutes(this.props.route.routes)}
 				</div>
 			</div>
 		)
