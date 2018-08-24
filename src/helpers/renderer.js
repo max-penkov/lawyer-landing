@@ -1,10 +1,21 @@
 import React from 'react'
 import webConfig from '../../webConfig'
 import {Helmet} from 'react-helmet'
+import {renderToString} from 'react-dom/server';
+import {StaticRouter} from 'react-router-dom';
+import Routes from './../client/Routes';
+import {Provider} from 'react-redux';
+import {renderRoutes} from 'react-router-config'
 
-export default (req) => {
+export default (req, context) => {
 	const helmet = Helmet.renderStatic();
-	const content = '<h2>fuck year</h2>';
+
+	const content = renderToString(
+		<StaticRouter context={context}>
+			<div>{renderRoutes(Routes)}</div>
+		</StaticRouter>
+	);
+
 	return `<html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -15,7 +26,7 @@ export default (req) => {
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-        <link href="${webConfig.siteURL}/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
+        <link href="${webConfig.siteURL}/assets/css/main.min.css" rel="stylesheet" type="text/css" />
     </head>
     <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${content}</div>

@@ -1,13 +1,16 @@
 import React from 'react'
-import { App } from './App'
-import { HomePage } from './pages/HomePage'
+import App from './App'
+import HomePage from './pages/HomePage'
 
 export default [
 	{
-		'path': '/',
+		path: '/',
+		exact: true,
 		...App,
-		// 'routes': {
-		// 	...HomePage``
-		// }
+		routes: [
+			{
+				...HomePage
+			}
+		]
 	}
 ]

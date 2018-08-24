@@ -46,7 +46,7 @@ app.get(['/*/:param', '*'], (req, res) => {
 		});
 	Promise.all(promises).then(() => {
 		const context = {};
-		const content = renderer(req);
+		const content = renderer(req, context);
 
 		if(context.url){
 			return res.redirect(301, context.url);
