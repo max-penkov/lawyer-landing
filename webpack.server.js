@@ -35,12 +35,12 @@ module.exports = {
             },
         ]
     },
-    // plugins: [
-    //     new CopyWebpackPlugin([
-    //         { from: 'src/assets/graphics', to: 'assets/graphics' },
-    //         { from: 'src/assets/email_templates', to: 'assets/email_templates' }
-    //     ])
-    // ],
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: 'src/style/graphics', to: 'assets/graphics' },
+            // { from: 'src/assets/email_templates', to: 'assets/email_templates' }
+        ])
+    ],
 
     // Tell webpack not to bundle any libraries that exist in the 'node_modules' folder
     // into the server bundle

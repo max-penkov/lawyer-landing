@@ -6,7 +6,11 @@ class App extends Component {
 	render() {
 		return (
 			<div className='container-fluid'>
-				<Header/>
+				<div className="row">
+					<div className="col"><Header/>
+						{renderRoutes(this.props.route.routes)}
+					</div>
+				</div>
 			</div>
 		)
 	}
