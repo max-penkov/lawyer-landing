@@ -51,8 +51,8 @@
 	transform: translateY($e);
 }
 
-@mixin transition($e) {
-	-webkit-transition:$e;
-	-moz-transition:$e;
-	transition:$e;
-}
+//@mixin transition($e) {
+//	-webkit-transition:$e;
+//	-moz-transition:$e;
+//	transition:$e;
+//}
