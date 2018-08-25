@@ -5,11 +5,9 @@ import Header from './components/Header'
 class App extends Component {
 	render() {
 		return (
-			<div className='container-fluid'>
-				<div className="row">
-					<Header/>
-					{renderRoutes(this.props.route.routes)}
-				</div>
+			<div>
+				<Header/>
+				{renderRoutes(this.props.route.routes)}
 			</div>
 		)
 	}

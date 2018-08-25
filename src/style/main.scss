@@ -24,9 +24,11 @@
 //@import "./../../node_modules/bootstrap/scss/utilities";
 //
 @import "./common/style";
+@import "./main/default";
 @import "main/header";
 @import "./main/homePage";
-@import "./main/default";
+@import "./main/aboutPage";
+@import "./common/banner_srcoller";
 //@import "./common/helpers";
 //@import "./common/close";
 //@import "./common/icons";

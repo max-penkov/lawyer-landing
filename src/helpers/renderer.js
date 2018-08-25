@@ -11,7 +11,7 @@ export default (req, context) => {
 	const helmet = Helmet.renderStatic();
 
 	const content = renderToString(
-		<StaticRouter context={context}>
+		<StaticRouter location={req.path} context={context}>
 			<div>{renderRoutes(Routes)}</div>
 		</StaticRouter>
 	);

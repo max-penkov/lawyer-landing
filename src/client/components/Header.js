@@ -44,7 +44,7 @@ class Header extends Component {
 				'mobileNavActive': this.state.mobileToggle
 			})}>
 
-				<div className="wrap">
+				<div className="wrap container">
 
 					<div className="logo_wrap">
 						<Link to="/">
