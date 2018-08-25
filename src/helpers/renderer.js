@@ -6,14 +6,17 @@ import {StaticRouter} from 'react-router-dom';
 import Routes from './../client/Routes';
 import {Provider} from 'react-redux';
 import {renderRoutes} from 'react-router-config'
+import serialize from 'serialize-javascript'
 
-export default (req, context) => {
+export default (req, store, context) => {
 	const helmet = Helmet.renderStatic();
 
 	const content = renderToString(
-		<StaticRouter location={req.path} context={context}>
-			<div>{renderRoutes(Routes)}</div>
-		</StaticRouter>
+		<Provider store={store}>
+			<StaticRouter location={req.path} context={context}>
+				<div>{renderRoutes(Routes)}</div>
+			</StaticRouter>
+		</Provider>
 	);
 
 	return `<html lang="en">
@@ -31,6 +34,7 @@ export default (req, context) => {
     <body ${helmet.bodyAttributes.toString()}>
         <div id="root">${content}</div>
         <script>
+			window.INITIAL_STATE = ${serialize(store.getState())}
         </script>
         <script src="${webConfig.siteURL}/client_bundle.js"></script>
     </body>

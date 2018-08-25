@@ -8,10 +8,25 @@ import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {renderRoutes} from 'react-router-config';
 import Routes from '../src/client/Routes'
+import axios from 'axios';
+import webConfig from './../webConfig'
+import reducers from './client/reducers';
+
+const axiosInstance = axios.create({
+	baseURL: webConfig.axiosInstance_baseURL
+});
+
+const store = createStore(
+	reducers,
+	window.INITIAL_STATE,
+	applyMiddleware(thunk.withExtraArgument(axiosInstance))
+);
 
 ReactDOM.hydrate(
-	<BrowserRouter>
-		<div>{renderRoutes(Routes)}</div>
-	</BrowserRouter>
+	<Provider store={store}>
+		<BrowserRouter>
+			<div>{renderRoutes(Routes)}</div>
+		</BrowserRouter>
+	</Provider>
 	, document.querySelector('#root'));
 

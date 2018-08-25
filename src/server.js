@@ -1,16 +1,18 @@
 import 'babel-polyfill';
 import express from 'express';
 import { matchRoutes } from 'react-router-config';
-import proxy from 'express-http-proxy';
-import nodemailer from 'nodemailer';
-import hbs from 'nodemailer-express-handlebars';
 import Routes from './client/Routes';
 import renderer from './helpers/renderer';
 import bodyParser from 'body-parser';
+import createStore from './helpers/createStore'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpack from 'webpack'
+import hbs from 'nodemailer-express-handlebars';
 import config from '../webpack.client.js'
+import proxy from 'express-http-proxy';
+import nodemailer from 'nodemailer';
+
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -33,6 +35,8 @@ app.get(['/*/:param', '*'], (req, res) => {
 
 	const ParamValue = req.params.param ? req.params.param : null;
 
+	const store = createStore(req);
+
 	const promises = matchRoutes(Routes, req.path)
 		.map(({ route }) => {
 			return route.loadData ? route.loadData(store, ParamValue) : null;
@@ -46,7 +50,7 @@ app.get(['/*/:param', '*'], (req, res) => {
 		});
 	Promise.all(promises).then(() => {
 		const context = {};
-		const content = renderer(req, context);
+		const content = renderer(req, store, context);
 
 		if(context.url){
 			return res.redirect(301, context.url);
