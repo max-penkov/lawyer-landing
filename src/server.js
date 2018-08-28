@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import express from 'express';
-import { matchRoutes } from 'react-router-config';
+import {matchRoutes} from 'react-router-config';
 import Routes from './client/Routes';
 import renderer from './helpers/renderer';
 import bodyParser from 'body-parser';
@@ -8,28 +8,26 @@ import createStore from './helpers/createStore'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpack from 'webpack'
-import hbs from 'nodemailer-express-handlebars';
 import config from '../webpack.client.js'
-import proxy from 'express-http-proxy';
-import nodemailer from 'nodemailer';
 
 
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.static('build'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+// express
 // var compiler = webpack(config);
 //
 // app.use(webpackDevMiddleware(compiler, {
-// 	stats: { colors: true },
+// 	stats: {colors: true},
 // 	noInfo: true,
 // 	publicPath: config.output.publicPath
 // }));
 //
 // app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static('build'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get(['/*/:param', '*'], (req, res) => {
 
@@ -38,7 +36,7 @@ app.get(['/*/:param', '*'], (req, res) => {
 	const store = createStore(req);
 
 	const promises = matchRoutes(Routes, req.path)
-		.map(({ route }) => {
+		.map(({route}) => {
 			return route.loadData ? route.loadData(store, ParamValue) : null;
 		})
 		.map(promise => {
@@ -52,12 +50,12 @@ app.get(['/*/:param', '*'], (req, res) => {
 		const context = {};
 		const content = renderer(req, store, context);
 
-		if(context.url){
+		if (context.url) {
 			return res.redirect(301, context.url);
 		}
 
 		// check if 404
-		if(context.notFound){
+		if (context.notFound) {
 			res.status(404);
 		}
 		res.send(content);

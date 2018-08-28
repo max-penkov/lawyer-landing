@@ -11,6 +11,7 @@
 @import "./../../node_modules/bootstrap/scss/images";
 @import "./../../node_modules/bootstrap/scss/grid";
 @import "./../../node_modules/bootstrap/scss/forms";
+@import "./../../node_modules/bootstrap/scss/card";
 @import "./../../node_modules/bootstrap/scss/buttons";
 @import "./../../node_modules/bootstrap/scss/transitions";
 @import "./../../node_modules/bootstrap/scss/custom-forms";
@@ -26,10 +27,13 @@
 @import "./common/style";
 @import "./main/default";
 @import "main/header";
+@import "main/footer";
 @import "./main/homePage";
 @import "./main/aboutPage";
 @import "./main/posts";
+@import "./main/casePage";
 @import "./common/banner_srcoller";
+@import "./common/card";
 //@import "./common/helpers";
 //@import "./common/close";
 //@import "./common/icons";

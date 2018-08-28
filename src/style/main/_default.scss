@@ -120,12 +120,12 @@ h3 {
 	opacity: 0;
 	transform: translateX(-25px);
 	will-change: opacity, transform;
-	@include transition(transform .8s ease-out, opacity .8s ease-in);
 }
 
 .anim-appear.anim-appear-active{
 	opacity: 1;
 	transform: translateX(0);
+	@include transition(transform .8s ease-out, opacity .8s ease-in);
 }
 
 

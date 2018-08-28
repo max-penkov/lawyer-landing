@@ -1,10 +1,12 @@
 const path = require('path');
 const webConfig = require('./webConfig');
+const webpack = require('webpack');
 
 module.exports = {
 	// Tell webpack the root file of our
 	// server application
-	entry: ['./src/index.js', './src/style/main.scss'],
+	entry: [
+		'./src/index.js', './src/style/main.scss'],
 
 	// Tell webpack where to put the output file
 	// that is generated
@@ -57,7 +59,6 @@ module.exports = {
 			}
 		]
 	}
-
 };
 
 

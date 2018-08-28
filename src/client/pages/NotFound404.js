@@ -18,7 +18,7 @@ class NotFoundPage extends Component {
 		return (
 			<div>
 				{this.head()}
-				<InternalTextBanner Heading="404 Страница не найдена" wrapperClass="posts" />
+				<InternalTextBanner Heading="404 - Страница не найдена" wrapperClass="posts" />
 				<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}  transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
 					<div className="main anim-appear container">
 						<div className="row">

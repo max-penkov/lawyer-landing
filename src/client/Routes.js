@@ -3,6 +3,7 @@ import App from './App'
 import HomePage from './pages/HomePage'
 import About from './pages/AboutPage'
 import Posts from './pages/blog/postsPage'
+import Cases from './pages/CasePage'
 import NotFound404 from './pages/NotFound404'
 export default [
 	{
@@ -11,6 +12,15 @@ export default [
 		routes: [
 			{
 				...Posts
+			}
+		]
+	},
+	{
+		path: '/cases',
+		...App,
+		routes:[
+			{
+				...Cases
 			}
 		]
 	},

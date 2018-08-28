@@ -65,16 +65,16 @@ class Header extends Component {
 						<nav>
 							<ul>
 								<li className="first">
-									<NavLink activeClassName="active" to="/blog">Blog</NavLink>
+									<NavLink activeClassName="active" to="/blog">Блог</NavLink>
 								</li>
 								<li className="first">
-									<NavLink activeClassName="active" to="/services">Services</NavLink>
+									<NavLink activeClassName="active" to="/cases">Кейсы</NavLink>
 								</li>
 								<li>
-									<NavLink activeClassName="active" to="/about">About</NavLink>
+									<NavLink activeClassName="active" to="/about">Обо мне</NavLink>
 								</li>
 								<li className="last">
-									<NavLink activeClassName="active" to="/contact">Contact</NavLink>
+									<NavLink activeClassName="active" to="/contact">Контаткы</NavLink>
 								</li>
 							</ul>
 						</nav>
