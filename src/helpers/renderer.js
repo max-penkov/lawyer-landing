@@ -9,8 +9,6 @@ import {renderRoutes} from 'react-router-config'
 import serialize from 'serialize-javascript'
 
 export default (req, store, context) => {
-	const helmet = Helmet.renderStatic();
-
 	const content = renderToString(
 		<Provider store={store}>
 			<StaticRouter location={req.path} context={context}>
@@ -18,6 +16,8 @@ export default (req, store, context) => {
 			</StaticRouter>
 		</Provider>
 	);
+
+	const helmet = Helmet.renderStatic();
 
 	return `<html lang="en">
     <head>

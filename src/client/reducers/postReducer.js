@@ -1,4 +1,4 @@
-import {RECEIVE_POSTS, REQUEST_POSTS, INVALIDATE_POSTS} from '../actions';
+import {RECEIVE_POST, REQUEST_POST, CLEAR_POST} from '../actions';
 
 export default function (state = {
 	lastUpdated: null,
@@ -6,17 +6,15 @@ export default function (state = {
 	didInvalidate: false,
 }, action) {
 	switch (action.type) {
-		case INVALIDATE_POSTS:
-			return {...state, didInvalidate: true};
-		case REQUEST_POSTS:
+		case REQUEST_POST:
 			return {...state, isFetching: true};
-		case RECEIVE_POSTS:
+		case RECEIVE_POST:
 			return {
 				...state,
 				isFetching: false,
 				didInvalidate: false,
 				lastUpdated: action.receivedAt,
-				items: action.payload || false
+				item: action.payload || false
 			};
 
 		default:

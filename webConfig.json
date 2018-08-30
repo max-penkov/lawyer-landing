@@ -1,4 +1,4 @@
 {
-    "siteURL": "https://dmitriy-lawyer.herokuapp.com",
+    "siteURL": "http://localhost:3010",
     "axiosInstance_baseURL": "https://api.graphcms.com"
 }

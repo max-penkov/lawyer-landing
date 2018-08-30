@@ -46,11 +46,11 @@ $link-hover-color: $danger;
 // basic vars
 $enable-shadows: false;
 $enable-transitions: true;
-$enable-rounded: true;
+$enable-rounded: false;
 $animation-speed: .3s;
 $animation-speed-slow: 1s;
 
-$font-family-cyr: "Museo-Sans", sans-serif;
+$font-family-cyr: "Garamond", sans-serif;
 $font-family-base: $font-family-cyr;
 $font-size-base: 1rem;
 $font-size-sm: 0.875rem;

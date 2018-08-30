@@ -33,7 +33,7 @@ class Posts extends Component {
 										<RenderHTML wrapperClass="user_content" html={post.shortdescription}/>
 									</div>
 									<Link className="readMore" to={`/blog/${post.slug}`}>
-										Read more
+										Читать дальше...
 									</Link>
 								</div>
 							</div>
@@ -54,11 +54,13 @@ class Posts extends Component {
 	}
 
 	render() {
-		if (!this.props.pageData == false) {
+		const {isFetching, pageData} = this.props;
+
+		if (!pageData == false) {
 			return (
 				<div>
 					{this.head()}
-					<InternalTextBanner Heading="Posts" wrapperClass="posts"/>
+					<InternalTextBanner Heading="Блог" wrapperClass="posts"/>
 					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}
 											 transitionAppearTimeout={5000} transitionEnter={false}
 											 transitionLeave={false}>
@@ -71,8 +73,7 @@ class Posts extends Component {
 				</div>
 			);
 		}
-
-		if (this.props.pageData == null) {
+		if (pageData == null) {
 			return (
 				<div>
 					{this.head()}
@@ -81,10 +82,12 @@ class Posts extends Component {
 											 transitionAppearTimeout={5000} transitionEnter={false}
 											 transitionLeave={false}>
 						<div className="main anim-appear container">
-							<div className="grid">
+							<div className="posts row">
 								<div className="column column_8_12">
 									<div className="posts">
-
+										{isFetching &&
+										<h2>Загрузка...</h2>
+										}
 									</div>
 								</div>
 								<div className="column column_4_12">
@@ -131,9 +134,9 @@ class Posts extends Component {
 // 	}
 // }
 function mapStateToProps(state) {
-	console.log('items: ' + state.posts.items);
 	return {
-		pageData: state.posts.items
+		pageData: state.posts.items,
+		isFetching: state.posts.isFetching
 	};
 
 };

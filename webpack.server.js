@@ -38,6 +38,7 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin([
             { from: 'src/style/graphics', to: 'assets/graphics' },
+            { from: 'src/style/font', to: 'assets/fonts' },
             // { from: 'src/assets/email_templates', to: 'assets/email_templates' }
         ])
     ],

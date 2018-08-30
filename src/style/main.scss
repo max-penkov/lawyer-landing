@@ -14,15 +14,13 @@
 @import "./../../node_modules/bootstrap/scss/card";
 @import "./../../node_modules/bootstrap/scss/buttons";
 @import "./../../node_modules/bootstrap/scss/transitions";
-@import "./../../node_modules/bootstrap/scss/custom-forms";
 @import "./../../node_modules/bootstrap/scss/dropdown";
 @import "./../../node_modules/bootstrap/scss/nav";
 @import "./../../node_modules/bootstrap/scss/navbar";
 //@import "./../../node_modules/bootstrap/scss/pagination";
-//@import "./../../node_modules/bootstrap/scss/badge";
 //@import "./../../node_modules/bootstrap/scss/close";
 //@import "./../../node_modules/bootstrap/scss/modal";
-//@import "./../../node_modules/bootstrap/scss/utilities";
+@import "./../../node_modules/bootstrap/scss/utilities";
 //
 @import "./common/style";
 @import "./main/default";
@@ -34,11 +32,11 @@
 @import "./main/casePage";
 @import "./common/banner_srcoller";
 @import "./common/card";
+@import "./common/forms";
 //@import "./common/helpers";
 //@import "./common/close";
 //@import "./common/icons";
 //@import "./common/list";
-//@import "./common/forms";
 //@import "./common/buttons";
 //@import "./common/custom-forms";
 //@import "./common/dropdown";
