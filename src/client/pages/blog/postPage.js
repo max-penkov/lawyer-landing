@@ -86,8 +86,8 @@ class Post extends Component {
 					</Helmet>
 					<InternalTextBanner Heading="" wrapperClass="post" />
 					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}  transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
-						<div className="main anim-appear">
-							<div className="grid">
+						<div className="main anim-appear container">
+							<div className="row">
 								<div className="column column_12_12">
 									<div className="post">
 
