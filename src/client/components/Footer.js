@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
 
 const Footer = () => {
 
@@ -21,7 +20,7 @@ const Footer = () => {
 								</li>
 								<li>
 									<Link to="/policies/privacy">Политика безопастности</Link>
-								</li>
+							``	</li>
 								<li>
 									<Link to="/policies/cookies">Защита данных</Link>
 								</li>

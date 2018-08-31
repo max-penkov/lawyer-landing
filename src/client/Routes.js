@@ -6,6 +6,9 @@ import Posts from './pages/blog/postsPage'
 import Post from './pages/blog/postPage'
 import Cases from './pages/CasePage'
 import ContactPage from './pages/ContactPage'
+import TermsAndConditions from './pages/policies/termsAndConditions'
+import Privacy from './pages/policies/privacy'
+import CookiesPolicy from './pages/policies/cookiesPolicy'
 import NotFound404 from './pages/NotFound404'
 
 export default [
@@ -46,6 +49,33 @@ export default [
 		routes: [
 			{
 				...ContactPage
+			}
+		]
+	},
+	{
+		path: '/policies/terms',
+		...App,
+		routes: [
+			{
+				...TermsAndConditions
+			}
+		]
+	},
+	{
+		path: '/policies/privacy',
+		...App,
+		routes: [
+			{
+				...Privacy
+			}
+		]
+	},
+	{
+		path: '/policies/cookies',
+		...App,
+		routes: [
+			{
+				...CookiesPolicy
 			}
 		]
 	},

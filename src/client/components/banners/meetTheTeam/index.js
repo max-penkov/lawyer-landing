@@ -18,13 +18,15 @@ class MeetTheTeamSlider extends Component {
 
 	render(){
 		var settings = {
-			dots: false,
+			dots: true,
 			infinite: true,
+			autoplay: true,
 			speed: 500,
-			slidesToShow: 4,
+			cssEase: 'linear',
+			slidesToShow: 3,
 			slidesToScroll: 1,
 			adaptiveHeight: true,
-			arrows: true,
+			arrows: false,
 			fade: false,
 			responsive: [
 				{

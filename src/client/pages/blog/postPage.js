@@ -3,14 +3,13 @@ import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import InternalTextBanner from './../../components/banners/internalTextBanner';
 import RenderHTML from './../../components/renderHTML';
-import {fetchPostsIfNeeded, fetchPost} from './../../actions';
+import {fetchPost} from './../../actions';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
 
 class Post extends Component {
 
 	componentDidMount() {
-		console.log(this.props)
 		this.props.fetchPost(this.props.match.params.id);
 	}
 
@@ -128,8 +127,7 @@ function mapStateToProps(state) {
 	return {
 		postData: state.post.item
 	};
-
-};
+}
 
 function loadData(store, landingPageID) {
 	return store.dispatch(fetchPost(landingPageID));

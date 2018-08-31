@@ -74,7 +74,7 @@ class Header extends Component {
 									<NavLink activeClassName="active" to="/about">Обо мне</NavLink>
 								</li>
 								<li className="last">
-									<NavLink activeClassName="active" to="/contact">Контаткы</NavLink>
+									<NavLink activeClassName="active" to="/contact">Контакты</NavLink>
 								</li>
 							</ul>
 						</nav>

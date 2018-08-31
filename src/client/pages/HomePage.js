@@ -23,27 +23,27 @@ class HomePage extends Component {
 							Пикунов Дмитрий Викторович
 						</h1>
 						<span className="msg">
-                Ваш адвокат на все случаи жизни
-              </span>
+                			Адвокат, оказываю высококвалифицированную юридическую помощь в соответствии с законами. За многолетний опыт работы выработал свой, уникальный подход к работе с клиентами.
+              			</span>
 						<Link to="/about">
-							<span>Подрообнее</span>
+							<span>Подробнее</span>
 						</Link>
 					</div>
 					<div className="pageScroll">
 						<i className="fas fa-chevron-down"></i>
 					</div>
 				</div>
-				<div className="main">
+				<div className="main container">
 					<div className="spotlights">
-						<div className="grid">
-							<div className="column column_4_12">
+						<div className="row">
+							<div className="col">
 								<div className="item_wrap">
 									<div className="img">
 										<img src="http://via.placeholder.com/300x250"/>
 									</div>
 								</div>
 							</div>
-							<div className="column column_4_12">
+							<div className="col">
 								<div className="item_wrap">
 									<div className="img">
 										<img src="http://via.placeholder.com/300x250"/>
