@@ -27,7 +27,7 @@ class Advantages extends Component {
 
 								<div className="advantages-details">
 									<div className="advantages-title">
-										<div className="js-goods-contenteditable h4">Опыт</div>
+										<div className="js-goods-contenteditable">Опыт</div>
 									</div>
 									<div className="advantages-descr">
 										<div className="note js-goods-contenteditable js-goods-descr"
@@ -54,7 +54,7 @@ class Advantages extends Component {
 
 								<div className="advantages-details">
 									<div className="advantages-title">
-										<div className="js-goods-contenteditable h4">Поддержка&nbsp;
+										<div className="js-goods-contenteditable">Поддержка&nbsp;
 										</div>
 									</div>
 									<div className="advantages-descr">
@@ -80,7 +80,7 @@ class Advantages extends Component {
 								</div>
 								<div className="advantages-details">
 									<div className="advantages-title">
-										<div className="js-goods-contenteditable h4"
+										<div className="js-goods-contenteditable"
 										>Сотрудничество
 										</div>
 									</div>

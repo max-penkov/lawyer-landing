@@ -34,7 +34,7 @@ header {
 			width: 5rem;
 			height: 100%;
 			position: absolute;
-			top: 0; left: 10px;
+			top: 0; left: 20px;
 			@include transition(.2s ease-in-out);
 			z-index: 20;
 
@@ -203,7 +203,7 @@ header {
 				width: 3rem;
 				height: 3rem;
 				position: absolute;
-				top: 50%; right: 10px;
+				top: 50%; right: 20px;
 				@include translateY(-50%);
 				z-index: 20;
 

@@ -5,7 +5,7 @@ export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const INVALIDATE_POSTS = 'INVALIDATE_POSTS';
 export const REQUEST_POST = 'REQUEST_POST';
 export const RECEIVE_POST = 'RECEIVE_POST';
-export const CLEAR_POST = 'CLEAR_POSR';
+export const CLEAR_POST = 'CLEAR_POST';
 
 const receivePosts = (json) => {
 	return {
@@ -32,6 +32,12 @@ const requestPosts = () => {
 const requestPost = () => {
 	return {
 		type: REQUEST_POST,
+	}
+};
+
+const clearPost = () => {
+	return {
+		type: CLEAR_POST
 	}
 };
 
@@ -91,4 +97,8 @@ export const fetchPostsIfNeeded = () => (dispatch, getState) => {
 	if (shouldFetchPosts(getState())) {
 		dispatch(fetchPosts());
 	}
+};
+
+export const clearPostData = () => (dispatch) => {
+	dispatch(clearPost())
 };

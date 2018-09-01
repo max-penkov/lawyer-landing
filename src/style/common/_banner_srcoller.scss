@@ -28,7 +28,6 @@
 			@include translateY(-50%);
 			z-index: 1;
 
-
 			&.slick-prev {
 				left: 1rem;
 				display: block;
@@ -109,27 +108,28 @@
 			}
 		}
 
-
 	}
 
 }
-
 
 // Custom Banners
 
 .topBanner_textOverlay {
 	position: relative;
-	top: 0; left: 0;
+	top: 0;
+	left: 0;
 	background-attachment: fixed;
 	background-position: right;
 	background-size: cover;
-	background-image: url('/assets/graphics/homePage/test.jpg');
+	background-image: url('/assets/graphics/homePage/mainBanner.jpg');
 	width: 100%;
 	height: 40.0rem;
 
 	h1 {
 		position: absolute;
-		top: 50%; left: 0; right: 0;
+		top: 50%;
+		left: 0;
+		right: 0;
 		margin: 0 auto;
 		font-size: 5rem;
 		font-weight: 700;
@@ -139,11 +139,19 @@
 
 }
 
-
 // Meet the team
 
 .meetTheTeam {
-
+	.quote {
+		user-select: none;
+		position: absolute;
+		top: 0;
+		font-family: $font-family-base, serif;
+		font-size: 9rem;
+		opacity: 0.1;
+		letter-spacing: -10px;
+		line-height: 0;
+	}
 	.item {
 		padding: 0 10px;
 
@@ -160,25 +168,26 @@
 		}
 
 		.details {
-			padding: 2.0rem 0 0 0;
-
+			padding: 1.0rem 0 0 0;
+			position: relative;
 			.name {
 				display: block;
 				width: 100%;
 				font-size: 2.4rem;
 				line-height: 2.8rem;
 				color: $black;
-				text-align: center;
+				text-align: right;
 				font-weight: 700;
 			}
 
-			.jobRole {
+			.desc {
 				display: block;
+				margin-top: 1rem;
 				width: 100%;
 				font-size: 1.8rem;
 				line-height: 2.4rem;
 				color: $black;
-				text-align: center;
+				text-align: right;
 				font-weight: 400;
 			}
 
@@ -193,7 +202,10 @@
 
 			&.slick-prev,
 			&.slick-next {
-				top: auto; bottom: 0; left: 0; right: 0;
+				top: auto;
+				bottom: 0;
+				left: 0;
+				right: 0;
 				margin: 0 auto;
 				transform: none;
 				height: auto;
@@ -214,8 +226,6 @@
 
 			}
 
-
-
 			&.slick-prev {
 				right: 5rem;
 			}
@@ -229,14 +239,11 @@
 
 }
 
-
-
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 767px) {
 
 	.topBanner_textOverlay h1 {
 		font-size: 2.5rem;
 		line-height: 3.5rem;
 	}
-
 
 }

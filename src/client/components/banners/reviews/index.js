@@ -38,12 +38,15 @@ class ReviewsSlider extends Component {
 				{
 					breakpoint: 800,
 					settings: {
-						slidesToShow: 2
-					}
+						slidesToShow: 2,
+						autoplay: false
+					},
 				},
 				{
+					autoplay: false,
 					breakpoint: 500,
 					settings: {
+						autoplay: false,
 						slidesToShow: 1
 					}
 				}
@@ -63,25 +66,10 @@ class ReviewsSlider extends Component {
 									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
 								</div>
 								<div className="details">
-                                <span className="name">
-                                    Jane Doe
-                                </span>
-									<span className="jobRole">
-                                    General manager
-                                </span>
-								</div>
-							</div>
-
-							<div className="item">
-								<div className="profilePic">
-									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
-								</div>
-								<div className="details">
-                                <span className="name">
-                                    Jane Doe
-                                </span>
-									<span className="jobRole">
-                                    General manager
+									<span className="quote">,,</span>
+									<span className="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dicta ea error, facilis hic magnam maxime nisi obcaecati possimus praesentium quidem quos repellat rerum veritatis, vitae voluptatem voluptatum! Ullam!</span>
+									<span className="name">
+                                    Владимир (г.Мценск)
                                 </span>
 								</div>
 							</div>
@@ -91,11 +79,10 @@ class ReviewsSlider extends Component {
 									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
 								</div>
 								<div className="details">
-                                <span className="name">
+									<span className="quote">,,</span>
+									<span className="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dicta ea error, facilis hic magnam maxime nisi obcaecati possimus praesentium quidem quos repellat rerum veritatis, vitae voluptatem voluptatum! Ullam!</span>
+									<span className="name">
                                     Jane Doe
-                                </span>
-									<span className="jobRole">
-                                    General manager
                                 </span>
 								</div>
 							</div>
@@ -105,11 +92,10 @@ class ReviewsSlider extends Component {
 									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
 								</div>
 								<div className="details">
-                                <span className="name">
+									<span className="quote">,,</span>
+									<span className="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dicta ea error, facilis hic magnam maxime nisi obcaecati possimus praesentium quidem quos repellat rerum veritatis, vitae voluptatem voluptatum! Ullam!</span>
+									<span className="name">
                                     Jane Doe
-                                </span>
-									<span className="jobRole">
-                                    General manager
                                 </span>
 								</div>
 							</div>
@@ -119,11 +105,23 @@ class ReviewsSlider extends Component {
 									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
 								</div>
 								<div className="details">
-                                <span className="name">
+									<span className="quote">,,</span>
+									<span className="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dicta ea error, facilis hic magnam maxime nisi obcaecati possimus praesentium quidem quos repellat rerum veritatis, vitae voluptatem voluptatum! Ullam!</span>
+									<span className="name">
                                     Jane Doe
                                 </span>
-									<span className="jobRole">
-                                    General manager
+								</div>
+							</div>
+
+							<div className="item">
+								<div className="profilePic">
+									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
+								</div>
+								<div className="details">
+									<span className="quote">,,</span>
+									<span className="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dicta ea error, facilis hic magnam maxime nisi obcaecati possimus praesentium quidem quos repellat rerum veritatis, vitae voluptatem voluptatum! Ullam!</span>
+									<span className="name">
+                                    Jane Doe
                                 </span>
 								</div>
 							</div>

@@ -102,7 +102,7 @@ class Posts extends Component {
 			);
 		}
 
-		if (this.props.pageData == false) {
+		if (pageData == false) {
 			return (
 				<div>
 					{this.head()}
@@ -130,19 +130,13 @@ class Posts extends Component {
 	}
 }
 
-// function componentWillReceiveProps(nextProps) {
-// 	if (nextProps.pageData !== this.props.pageData) {
-// 		const { dispatch, pageData } = nextProps;
-// 		dispatch(fetchPostsIfNeeded())
-// 	}
-// }
 function mapStateToProps(state) {
 	return {
 		pageData: state.posts.items,
 		isFetching: state.posts.isFetching
 	};
 
-};
+}
 
 function loadData(store) {
 	return store.dispatch(fetchPosts());

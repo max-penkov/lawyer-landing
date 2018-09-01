@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import InternalTextBanner from './../../components/banners/internalTextBanner';
 import RenderHTML from './../../components/renderHTML';
-import {fetchPost} from './../../actions';
+import {fetchPost, clearPostData} from './../../actions';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -12,6 +12,10 @@ class Post extends Component {
 
 	componentDidMount() {
 		this.props.fetchPost(this.props.match.params.id);
+	}
+
+	componentWillUnmount(){
+		this.props.clearPostData();
 	}
 
 	renderPosts() {
@@ -56,21 +60,20 @@ class Post extends Component {
 
 	render() {
 		const {postData, isFetching} = this.props;
-
-		if(!this.props.postData == false){
+		if(!postData == false){
 			return(
 				<div>
 					{this.head()}
-					<InternalTextBanner Heading={this.props.postData.postTitle} wrapperClass="post" />
+					<InternalTextBanner Heading={postData.postTitle} wrapperClass="post" />
 					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}  transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
 						<div className="main anim-appear container">
 							<div className="row">
 								<div className="col">
 									<div className="post">
 										<div className="post_banner">
-											<img src={this.props.postData.imageURL} />
+											<img src={postData.imageURL} />
 										</div>
-										<RenderHTML wrapperClass="user_content" html={this.props.postData.post} />
+										<RenderHTML wrapperClass="user_content" html={postData.post} />
 									</div>
 								</div>
 							</div>
@@ -80,7 +83,7 @@ class Post extends Component {
 			);
 		}
 
-		if(this.props.postData == null){
+		if(postData == null){
 			return (
 				<div>
 					<Helmet bodyAttributes={{class: "postPage"}}>
@@ -105,7 +108,7 @@ class Post extends Component {
 			);
 		}
 
-		if(this.props.postData == false){
+		if(postData == false){
 			return (
 				<div>
 					<Helmet bodyAttributes={{class: "postPage"}}>
@@ -142,6 +145,6 @@ function loadData(store, landingPageID) {
 
 export default {
 	loadData,
-	component: connect(mapStateToProps, {fetchPost})(Post)
+	component: connect(mapStateToProps, {fetchPost, clearPostData})(Post)
 };
 

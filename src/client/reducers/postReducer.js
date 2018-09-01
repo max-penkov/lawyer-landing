@@ -4,6 +4,7 @@ export default function (state = {
 	lastUpdated: null,
 	isFetching: false,
 	didInvalidate: false,
+	item: null
 }, action) {
 	switch (action.type) {
 		case REQUEST_POST:

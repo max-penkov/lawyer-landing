@@ -1,8 +1,16 @@
 @font-face {
-	font-family: 'Garamond';
-	font-weight: 100;
-	src: url("/assets/fonts/EBGaramond-Regular.ttf") format('ttf');
+	font-family: 'Cormorant Garamond';
+	font-weight: 400;
+	src: url("/assets/fonts/CormorantGaramond-Regular.ttf") format('truetype');
 }
+
+@font-face {
+	font-family: 'Cormorant Garamond Bold';
+	font-weight: 700;
+	src: url("/assets/fonts/CormorantGaramond-Bold.ttf") format('truetype');
+}
+
+
 
 body {
 	color: $main-color;

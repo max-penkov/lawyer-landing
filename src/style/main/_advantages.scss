@@ -3,7 +3,7 @@
 	flex-direction: column;
 	&-item {
 		text-align: center;
-		margin-top: 0;
+		margin: 0 0 2rem;
 		border: 1px solid #edeff1;
 		background-color: #fff;
 		height: 35rem;
@@ -53,6 +53,8 @@
 		@include center-xy();
 	}
 	&-title {
-		font-weight: bold;
+		font-weight: 700;
+		font-family: $font-family-bold;
+		font-size: 2rem;
 	}
 }

@@ -13,24 +13,6 @@ $white: #ffffff;
 $orange: #f5a637;
 $red: #fe2424;
 
-//$header-color: #737373;
-$header-bg-color: #f8f8f9;
-$custom-green: #00b856;
-$box-green: #00b956;
-$box-green-p: #b3eacd;
-$brand-text: #030303;
-//$vacancy-desc-text: #4c4c4c;
-//$header-color-text: #8a91ba;
-//$member-text: #5b5b5b;
-$footer-color-header-text: #8189c0;
-$footer-header: #b3b8d9;
-//$solid-gray: #9a9a9a;
-
-//$vacancies-main-color: #2a378b;
-//$slider-bg-color: #4957b2;
-//$slider-blue-color: #0063c6;
-//$slider-lilac-color: #50439b;
-
 // colors
 $black: #000;
 $white: #fff;
@@ -50,13 +32,14 @@ $enable-rounded: false;
 $animation-speed: .3s;
 $animation-speed-slow: 1s;
 
-$font-family-cyr: "Garamond", sans-serif;
+$font-family-cyr: "Cormorant Garamond", sans-serif;
 //$font-family-cyr: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-base: $font-family-cyr;
+$font-family-bold: "Cormorant Garamond Bold", sans-serif;
 $font-size-base: 1rem;
 $font-size-sm: 0.875rem;
 $font-size-md: 1.2rem; // fake var
-$font-weight-base: 500;
+$font-weight-base: 400;
 $font-weight-normal: $font-weight-base;
 $font-weight-bold: 700;
 
@@ -78,7 +61,7 @@ $btn-border-radius-lg: 25px;
 $btn-disabled-opacity: 1;
 
 $base-spacer: 1.25rem;
-$body-bg: $header-bg-color;
+$grid-gutter-width: 40px;
 
 $grid-columns: 12;
 $grid-breakpoints: (
