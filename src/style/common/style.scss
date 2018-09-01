@@ -38,6 +38,16 @@ h2, .h2 {
 h4, .h4 {
 	font-size: 1.25rem;
 }
+.icon{
+	display: block;
+	text-align: center;
+	width: 100%;
+
+	svg {
+		font-size: 4rem;
+		color: $black;
+	}
+}
 
 .container-expanded-sm, .container-expanded-md {
 	max-width: none;
@@ -62,7 +72,13 @@ h4, .h4 {
 		padding-left: 0;
 	}
 }
-
+.section {
+	margin-bottom: 8rem;
+	h2{
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+}
 @include media-breakpoint-up(md) {
 	h1, .h1 {
 		font-size: 2.8rem;

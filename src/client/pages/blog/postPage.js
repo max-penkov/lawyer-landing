@@ -6,6 +6,7 @@ import RenderHTML from './../../components/renderHTML';
 import {fetchPost} from './../../actions';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class Post extends Component {
 
@@ -54,6 +55,8 @@ class Post extends Component {
 	}
 
 	render() {
+		const {postData, isFetching} = this.props;
+
 		if(!this.props.postData == false){
 			return(
 				<div>
@@ -81,15 +84,18 @@ class Post extends Component {
 			return (
 				<div>
 					<Helmet bodyAttributes={{class: "postPage"}}>
-						<title>{`React Starter Kit`}</title>
+						<title>{`Адвокат Дмитрий Пикунов`}</title>
 					</Helmet>
 					<InternalTextBanner Heading="" wrapperClass="post" />
 					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}  transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
 						<div className="main anim-appear container">
 							<div className="row">
-								<div className="column column_12_12">
+								<div className="col">
 									<div className="post">
-
+										{isFetching &&
+										<div className="icon">
+											<FontAwesomeIcon icon="spinner" spin/>
+										</div>}
 									</div>
 								</div>
 							</div>
@@ -103,13 +109,13 @@ class Post extends Component {
 			return (
 				<div>
 					<Helmet bodyAttributes={{class: "postPage"}}>
-						<title>{`404 not found - React Starter Kit`}</title>
+						<title>{`404 Страница не найдена - Адвокат Дмитрий Пикунов`}</title>
 					</Helmet>
-					<InternalTextBanner Heading="404 not found" wrapperClass="post" />
+					<InternalTextBanner Heading="404 - Страница не найдена" wrapperClass="post" />
 					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}  transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
-						<div className="main anim-appear">
-							<div className="grid">
-								<div className="column column_12_12">
+						<div className="main anim-appear container">
+							<div className="row">
+								<div className="col">
 									<div className="post">
 
 									</div>
@@ -125,7 +131,8 @@ class Post extends Component {
 
 function mapStateToProps(state) {
 	return {
-		postData: state.post.item
+		postData: state.post.item,
+		isFetching: state.post.isFetching
 	};
 }
 

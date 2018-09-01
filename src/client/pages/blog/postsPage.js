@@ -6,6 +6,7 @@ import RenderHTML from './../../components/renderHTML';
 import {fetchPostsIfNeeded, fetchPosts} from './../../actions';
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class Posts extends Component {
 
@@ -86,8 +87,9 @@ class Posts extends Component {
 								<div className="column column_8_12">
 									<div className="posts">
 										{isFetching &&
-										<h2>Загрузка...</h2>
-										}
+										<div className="icon">
+											<FontAwesomeIcon icon="spinner" spin/>
+										</div>}
 									</div>
 								</div>
 								<div className="column column_4_12">
@@ -127,6 +129,7 @@ class Posts extends Component {
 
 	}
 }
+
 // function componentWillReceiveProps(nextProps) {
 // 	if (nextProps.pageData !== this.props.pageData) {
 // 		const { dispatch, pageData } = nextProps;
@@ -140,6 +143,7 @@ function mapStateToProps(state) {
 	};
 
 };
+
 function loadData(store) {
 	return store.dispatch(fetchPosts());
 }

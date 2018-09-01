@@ -44,7 +44,7 @@ class ContactPage extends Component {
 				<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}  transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
 					<div className="main anim-appear container">
 						<div className="row justify-content-center">
-							<div className="col-6">
+							<div className="col-sm-12 col-md-6">
 								<div className="content_block">
 
 									<form onSubmit={handleSubmit(this.submit.bind(this))}>

@@ -3,27 +3,27 @@ import Slider from 'react-slick';
 import classNames from 'classnames';
 import webConfig from './../../../../../webConfig';
 
-class MeetTheTeamSlider extends Component {
+class ReviewsSlider extends Component {
 
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			meetTheTeam_loaded: false
 		}
 	}
 
-	componentDidMount(){
-		this.setState({meetTheTeam_loaded : true});
+	componentDidMount() {
+		this.setState({meetTheTeam_loaded: true});
 	}
 
-	render(){
+	render() {
 		var settings = {
 			dots: true,
 			infinite: true,
 			autoplay: true,
 			speed: 500,
 			cssEase: 'linear',
-			slidesToShow: 3,
+			slidesToShow: 4,
 			slidesToScroll: 1,
 			adaptiveHeight: true,
 			arrows: false,
@@ -50,91 +50,90 @@ class MeetTheTeamSlider extends Component {
 			]
 		};
 
-		return(
-			<div className="meetTheTeam">
-
-				<div className={classNames({'banner_scroller': true, 'loaded': this.state.meetTheTeam_loaded })}>
-
-					<Slider {...settings}>
-
-						<div className="item">
-							<div className="profilePic">
-								<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`} />
-							</div>
-							<div className="details">
+		return (
+			<div>
+				<h2>
+					{this.props.Heading}
+				</h2>
+				<div className="meetTheTeam">
+					<div className={classNames({'banner_scroller': true, 'loaded': this.state.meetTheTeam_loaded})}>
+						<Slider {...settings}>
+							<div className="item">
+								<div className="profilePic">
+									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
+								</div>
+								<div className="details">
                                 <span className="name">
                                     Jane Doe
                                 </span>
-								<span className="jobRole">
+									<span className="jobRole">
                                     General manager
                                 </span>
+								</div>
 							</div>
-						</div>
 
-						<div className="item">
-							<div className="profilePic">
-								<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`} />
-							</div>
-							<div className="details">
+							<div className="item">
+								<div className="profilePic">
+									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
+								</div>
+								<div className="details">
                                 <span className="name">
                                     Jane Doe
                                 </span>
-								<span className="jobRole">
+									<span className="jobRole">
                                     General manager
                                 </span>
+								</div>
 							</div>
-						</div>
 
-						<div className="item">
-							<div className="profilePic">
-								<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`} />
-							</div>
-							<div className="details">
+							<div className="item">
+								<div className="profilePic">
+									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
+								</div>
+								<div className="details">
                                 <span className="name">
                                     Jane Doe
                                 </span>
-								<span className="jobRole">
+									<span className="jobRole">
                                     General manager
                                 </span>
+								</div>
 							</div>
-						</div>
 
-						<div className="item">
-							<div className="profilePic">
-								<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`} />
-							</div>
-							<div className="details">
+							<div className="item">
+								<div className="profilePic">
+									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
+								</div>
+								<div className="details">
                                 <span className="name">
                                     Jane Doe
                                 </span>
-								<span className="jobRole">
+									<span className="jobRole">
                                     General manager
                                 </span>
+								</div>
 							</div>
-						</div>
 
-						<div className="item">
-							<div className="profilePic">
-								<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`} />
-							</div>
-							<div className="details">
+							<div className="item">
+								<div className="profilePic">
+									<img src={`${webConfig.siteURL}/assets/graphics/meetTheTeam/profilePic.jpg`}/>
+								</div>
+								<div className="details">
                                 <span className="name">
                                     Jane Doe
                                 </span>
-								<span className="jobRole">
+									<span className="jobRole">
                                     General manager
                                 </span>
+								</div>
 							</div>
-						</div>
 
-					</Slider>
+						</Slider>
+					</div>
 				</div>
-
-
-
 			</div>
 		)
 	};
 }
 
-export default MeetTheTeamSlider;
+export default ReviewsSlider;

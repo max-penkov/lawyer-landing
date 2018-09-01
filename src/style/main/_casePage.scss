@@ -10,9 +10,9 @@
 			width: 100%;
 			text-align: center;
 
-			i {
+			svg {
 				font-size: 4.5rem;
-				color: $black;
+				color: $orange;
 			}
 
 		}
@@ -55,9 +55,5 @@
 
 
 @media only screen and (max-width: 767px){
-
-	.services_grid .item {
-		width: 100%;
-	}
 
 }

@@ -1,0 +1,58 @@
+.advantages {
+	display: flex;
+	flex-direction: column;
+	&-item {
+		text-align: center;
+		margin-top: 0;
+		border: 1px solid #edeff1;
+		background-color: #fff;
+		height: 35rem;
+		box-shadow: 0 0 20px rgba(0, 0, 0, .03);
+		&:hover{
+			.advantages-image-wrap{
+				background: $orange !important;
+				&::after {
+					border-top-color: $orange !important;
+				}
+				svg {
+					color: #fff;
+				}
+			}
+		}
+	}
+	&-details {
+		padding: 30px;
+	}
+	&-image-wrap {
+		background: #f1f2f4 !important;
+		border-radius: 50%;
+		@include size(110px);
+		@include transition(all ease .4s);
+		line-height: 110px;
+		text-align: center;
+		display: block;
+		margin: 40px auto 0;
+		padding: 0 !important;
+		position: relative;
+		&::after {
+			content: '';
+			width: 0;
+			position: absolute;
+			left: 50%;
+			margin-left: -10px;
+			bottom: -15px;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 20px solid transparent;
+			border-top-color: #f1f2f4;
+			@include transition(all ease .4s);
+		}
+	}
+	&-image-wrap2 {
+		@include center-xy();
+	}
+	&-title {
+		font-weight: bold;
+	}
+}

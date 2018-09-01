@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import InternalTextBanner from './../components/banners/internalTextBanner';
 import {Helmet} from 'react-helmet';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 class Case extends Component {
 
@@ -24,7 +25,7 @@ class Case extends Component {
 						<div className="services_grid row">
 							<div className="item col-md-4">
 								<div className="icon">
-									<i className="fab fa-connectdevelop"></i>
+									<FontAwesomeIcon icon={['fab', 'connectdevelop']} />
 								</div>
 								<div className="text">
 									<span className="title">Global coverage</span>
@@ -36,7 +37,7 @@ class Case extends Component {
 
 							<div className="item col-md-4">
 								<div className="icon">
-									<i className="fab fa-connectdevelop"></i>
+									<FontAwesomeIcon icon={['fab', 'connectdevelop']} />
 								</div>
 								<div className="text">
 									<span className="title">Global coverage</span>
@@ -48,7 +49,7 @@ class Case extends Component {
 
 							<div className="item col-md-4">
 								<div className="icon">
-									<i className="fab fa-connectdevelop"></i>
+									<FontAwesomeIcon icon={['fab', 'connectdevelop']} />
 								</div>
 								<div className="text">
 									<span className="title">Global coverage</span>
@@ -60,7 +61,7 @@ class Case extends Component {
 
 							<div className="item col-md-4">
 								<div className="icon">
-									<i className="fab fa-connectdevelop"></i>
+									<FontAwesomeIcon icon={['fab', 'connectdevelop']} />
 								</div>
 								<div className="text">
 									<span className="title">Global coverage</span>
@@ -72,7 +73,7 @@ class Case extends Component {
 
 							<div className="item col-md-4">
 								<div className="icon">
-									<i className="fab fa-connectdevelop"></i>
+									<FontAwesomeIcon icon={['fab', 'connectdevelop']} />
 								</div>
 								<div className="text">
 									<span className="title">Global coverage</span>
@@ -84,7 +85,7 @@ class Case extends Component {
 
 							<div className="item col-md-4">
 								<div className="icon">
-									<i className="fab fa-connectdevelop"></i>
+									<FontAwesomeIcon icon={['fab', 'connectdevelop']} />
 								</div>
 								<div className="text">
 									<span className="title">Global coverage</span>
