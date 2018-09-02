@@ -5,25 +5,9 @@ import Routes from './client/Routes';
 import renderer from './helpers/renderer';
 import bodyParser from 'body-parser';
 import createStore from './helpers/createStore'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpack from 'webpack'
-import config from '../webpack.client.js'
-
 
 const port = process.env.PORT || 3010;
 const app = express();
-
-// express
-// var compiler = webpack(config);
-//
-// app.use(webpackDevMiddleware(compiler, {
-// 	stats: {colors: true},
-// 	noInfo: true,
-// 	publicPath: config.output.publicPath
-// }));
-//
-// app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static('build'));
 app.use(bodyParser.json());

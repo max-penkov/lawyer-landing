@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
 
-const mapState = {center: [55.76, 37.64], zoom: 15};
+const mapState = {center: [55.76, 37.64], zoom: 12};
 
 class MapBasics extends React.Component {
 	constructor(props) {
@@ -25,25 +25,23 @@ class MapBasics extends React.Component {
 					{this.props.Heading}
 				</h2>
 				<YMaps>
-					<div id="map-basics">
-						<Map width="100%" height="450px" state={mapState}>
-							<Placemark
-								geometry={{
-									coordinates: [55.751574, 37.573856]
-								}}
-								properties={{
-									hintContent: 'Собственный значок метки',
-									balloonContent: 'Это красивая метка'
-								}}
-								options={{
-									iconLayout: 'default#image',
-									iconImageHref: 'images/myIcon.gif',
-									iconImageSize: [30, 42],
-									iconImageOffset: [-3, -42]
-								}}
-							/>
-						</Map>
-					</div>
+					<Map width="100%" height="450px" state={mapState}>
+						<Placemark
+							geometry={{
+								coordinates: [55.751574, 37.573856]
+							}}
+							properties={{
+								hintContent: 'офиис',
+								balloonContent: 'Координта и телефон'
+							}}
+							// options={{
+							// 	iconLayout: 'default#image',
+							// 	iconImageHref: 'images/myIcon.gif',
+							// 	iconImageSize: [30, 42],
+							// 	iconImageOffset: [-3, -42]
+							// }}
+						/>
+					</Map>
 				</YMaps>
 			</div>
 		);

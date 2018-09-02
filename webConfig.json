@@ -1,4 +1,4 @@
 {
     "siteURL": "https://dmitriy-lawyer.herokuapp.com",
-    "axiosInstance_baseURL": "https://api.graphcms.com"
+    "axiosInstance_baseURL": "https://api-euwest.graphcms.com"
 }

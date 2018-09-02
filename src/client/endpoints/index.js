@@ -1,1 +1,1 @@
-export const landingPageAPI = '/simple/v1/cjhm2fr577kni01706tr0xvst';
+export const landingPageAPI = '/v1/cjl6iw0r701gy01ehkpfuzekp/master';

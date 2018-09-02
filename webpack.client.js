@@ -32,6 +32,10 @@ module.exports = {
 				}
 			},
 			{
+				test: /\.css$/,
+				use: ['css-loader']
+			},
+			{
 				test: /\.scss$/,
 				use: [
 					{

@@ -5,6 +5,7 @@ import About from './pages/AboutPage'
 import Posts from './pages/blog/postsPage'
 import Post from './pages/blog/postPage'
 import Cases from './pages/CasePage'
+import Services from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import TermsAndConditions from './pages/policies/termsAndConditions'
 import Privacy from './pages/policies/privacy'
@@ -28,9 +29,18 @@ export default [
 	{
 		path: '/cases',
 		...App,
-		routes:[
+		routes: [
 			{
 				...Cases
+			}
+		]
+	},
+	{
+		path: '/services',
+		...App,
+		routes: [
+			{
+				...Services
 			}
 		]
 	},

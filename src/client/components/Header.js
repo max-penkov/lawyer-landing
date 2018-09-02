@@ -70,8 +70,11 @@ class Header extends Component {
 								<li className="first">
 									<NavLink activeClassName="active" to="/cases">Кейсы</NavLink>
 								</li>
+								<li className="first">
+									<NavLink activeClassName="active" to="/services">Услуги и расценки</NavLink>
+								</li>
 								<li>
-									<NavLink activeClassName="active" to="/about">Обо мне</NavLink>
+									<NavLink activeClassName="active" to="/about">О себе</NavLink>
 								</li>
 								<li className="last">
 									<NavLink activeClassName="active" to="/contact">Контакты</NavLink>

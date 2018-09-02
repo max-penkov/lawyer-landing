@@ -25,7 +25,7 @@ class Post extends Component {
 					<div key={index} className="post col-md-6 col-lg-4">
 						<div className="wrap">
 							<div className="img">
-								<img src={post.imageURL}/>
+								<img src={post.imageURL.url}/>
 							</div>
 							<div className="details card">
 								<div className="card-body">
@@ -71,7 +71,7 @@ class Post extends Component {
 								<div className="col">
 									<div className="post">
 										<div className="post_banner">
-											<img src={postData.imageURL} />
+											<img src={postData.imageURL.url} />
 										</div>
 										<RenderHTML wrapperClass="user_content" html={postData.post} />
 									</div>

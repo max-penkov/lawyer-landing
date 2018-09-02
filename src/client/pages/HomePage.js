@@ -5,8 +5,18 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Advantages from "../components/banners/advantages"
 import Map from "../components/Map"
 import ReviewsSlider from '../components/banners/reviews'
+import webConfig from "../../../webConfig"
+import {fetchServices, fetchServicesIfNeeded} from "../actions";
+import {connect} from 'react-redux';
+import RenderHTML from "../components/renderHTML";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 
 class HomePage extends Component {
+
+	componentDidMount() {
+		this.props.fetchServicesIfNeeded();
+	}
 
 	head() {
 		return (
@@ -14,6 +24,42 @@ class HomePage extends Component {
 				<title>{`Главная - Адвокат Дмитрий Пикунов`}</title>
 			</Helmet>
 		);
+	}
+
+	renderServices() {
+		if (!this.props.pageData == false) {
+			return this.props.pageData.map((service, index) => {
+				return (
+					<div key={index} className="col-md-6 col-lg-4">
+						<div className="item_wrap">
+							<div className="img">
+								<img src={`${webConfig.siteURL}/assets/graphics/homePage/case_${index}.jpg`} width="300"
+									 height="250"/>
+							</div>
+							<div className="details card">
+								<div className="card-body">
+									<div className="short_desc">
+										{service.serviceName}
+									</div>
+									<div className="short_price">{service.price}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				);
+			})
+		}
+		if (this.props.pageData == null) {
+			return (
+				<div className="col">
+					{this.props.isFetching &&
+					<div className="icon">
+						<FontAwesomeIcon icon="spinner" spin/>
+					</div>}
+				</div>
+			)
+		}
+
 	}
 
 	render() {
@@ -40,36 +86,21 @@ class HomePage extends Component {
 							<FontAwesomeIcon icon="chevron-down"/>
 						</div>
 					</div>
-					<div className="main container">
-						<div className="spotlights">
-							<div className="row">
-								<div className="col-md-6 col-lg-4">
-									<div className="item_wrap">
-										<div className="img">
-											<img src="http://via.placeholder.com/300x250"/>
-										</div>
-									</div>
-								</div>
-								<div className="col-md-6 col-lg-4">
-									<div className="item_wrap">
-										<div className="img">
-											<img src="http://via.placeholder.com/300x250"/>
-										</div>
-									</div>
-								</div>
-								<div className="col-md-6 col-lg-4">
-									<div className="item_wrap">
-										<div className="img">
-											<img src="http://via.placeholder.com/300x250"/>
-										</div>
-									</div>
+					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}
+											 transitionAppearTimeout={5000} transitionEnter={false}
+											 transitionLeave={false}>
+						<div className="main anim-appear container">
+							<h2>Услуги</h2>
+							<div className="spotlights">
+								<div className="row">
+									{this.renderServices()}
 								</div>
 							</div>
 						</div>
-					</div>
+					</ReactCSSTransitionGroup>
 				</section>
 				<section className="section">
-						<Advantages Heading="Преимущества"/>
+					<Advantages Heading="Преимущества"/>
 				</section>
 				<section className="section">
 					<div className="container">
@@ -86,6 +117,21 @@ class HomePage extends Component {
 	}
 }
 
+function mapStateToProps(state) {
+	return {
+		pageData: state.services.items ? state.services.items.sort((a, b) => {
+			return Math.random() - 0.5
+		}).slice(0, 3) : state.services.items.slice(0, 3),
+		isFetching: state.services.isFetching
+	};
+
+}
+
+function loadData(store) {
+	return store.dispatch(fetchServices());
+}
+
 export default {
-	component: HomePage
+	loadData,
+	component: connect(mapStateToProps, {fetchServices, fetchServicesIfNeeded})(HomePage)
 };

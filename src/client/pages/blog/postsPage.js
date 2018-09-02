@@ -21,7 +21,7 @@ class Posts extends Component {
 					<div key={index} className="post col-md-6 col-lg-4">
 						<div className="wrap">
 							<div className="img">
-								<img src={post.imageURL}/>
+								<img src={post.imageURL.url}/>
 							</div>
 							<div className="details card">
 								<div className="card-body">
@@ -31,7 +31,7 @@ class Posts extends Component {
 										</Link>
 									</div>
 									<div className="short_desc">
-										<RenderHTML wrapperClass="user_content" html={post.shortdescription}/>
+										<RenderHTML wrapperClass="user_content" html={post.shortDescription}/>
 									</div>
 									<Link className="readMore" to={`/blog/${post.slug}`}>
 										Читать дальше...
@@ -84,16 +84,14 @@ class Posts extends Component {
 											 transitionLeave={false}>
 						<div className="main anim-appear container">
 							<div className="posts row">
-								<div className="column column_8_12">
+								<div className="col">
 									<div className="posts">
 										{isFetching &&
 										<div className="icon">
 											<FontAwesomeIcon icon="spinner" spin/>
 										</div>}
+										{!isFetching && <h2>Ждите новостей, скоро будет обновление</h2>}
 									</div>
-								</div>
-								<div className="column column_4_12">
-
 								</div>
 							</div>
 						</div>
@@ -111,14 +109,11 @@ class Posts extends Component {
 											 transitionAppearTimeout={5000} transitionEnter={false}
 											 transitionLeave={false}>
 						<div className="main anim-appear container">
-							<div className="grid">
-								<div className="column column_8_12">
+							<div className="row">
+								<div className="col">
 									<div className="posts">
 
 									</div>
-								</div>
-								<div className="column column_4_12">
-
 								</div>
 							</div>
 						</div>

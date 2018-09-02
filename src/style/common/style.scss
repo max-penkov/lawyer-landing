@@ -5,8 +5,8 @@
 }
 
 @font-face {
-	font-family: 'Cormorant Garamond Bold';
-	font-weight: 700;
+	font-family: 'Cormorant Garamond';
+	font-weight: $font-weight-bold;
 	src: url("/assets/fonts/CormorantGaramond-Bold.ttf") format('truetype');
 }
 
@@ -55,6 +55,11 @@ h4, .h4 {
 		font-size: 4rem;
 		color: $black;
 	}
+}
+
+.short_price {
+	font-size: 3rem;
+	color: $orange;
 }
 
 .container-expanded-sm, .container-expanded-md {

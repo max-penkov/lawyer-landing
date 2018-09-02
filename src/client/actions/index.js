@@ -6,11 +6,13 @@ export const INVALIDATE_POSTS = 'INVALIDATE_POSTS';
 export const REQUEST_POST = 'REQUEST_POST';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const CLEAR_POST = 'CLEAR_POST';
+export const REQUEST_SERVICES = 'REQUEST_SERVICES';
+export const RECEIVE_SERVICES = 'RECEIVE_SERVICES';
 
 const receivePosts = (json) => {
 	return {
 		type: RECEIVE_POSTS,
-		payload: json.data.data.allBlogs,
+		payload: json.data.data.blogs,
 		receivedAt: Date.now()
 	};
 };
@@ -18,14 +20,28 @@ const receivePosts = (json) => {
 const receivePost = (json) => {
 	return {
 		type: RECEIVE_POST,
-		payload: json.data.data.Blog,
+		payload: json.data.data.blog,
 		receivedAt: Date.now()
 	};
+};
+
+const receiveServices = (json)  => {
+	return {
+		type: RECEIVE_SERVICES,
+		payload: json.data.data.serviceses,
+		receivedAt: Date.now()
+	}
 };
 
 const requestPosts = () => {
 	return {
 		type: REQUEST_POSTS,
+	}
+};
+
+const requestServices = () => {
+	return {
+		type: REQUEST_SERVICES,
 	}
 };
 
@@ -41,14 +57,13 @@ const clearPost = () => {
 	}
 };
 
-const shouldFetchPosts = (state) => {
-	const posts = state.posts;
-	if (!posts.items) {
+const shouldFetch = (curState) => {
+	if (!curState.items) {
 		return true;
-	} else if (posts.isFetching) {
+	} else if (curState.isFetching) {
 		return false;
 	} else {
-		return (Date.now() - posts.lastUpdated) / 1000 > 3600 || posts.didInvalidate;
+		return (Date.now() - curState.lastUpdated) / 1000 > 3600 || curState.didInvalidate;
 	}
 };
 
@@ -57,10 +72,12 @@ export const fetchPost = (postID) => async (dispatch, getState, api) => {
 
 	const _query = {
 		query: `{
-            Blog(slug: "${postID}"){
+            blog(where: {slug: "${postID}"}){
                 postTitle
                 post
-                imageURL
+                imageURL {
+                	url
+                }
             }
         }`
 	};
@@ -77,11 +94,13 @@ export const fetchPosts = () => async (dispatch, getState, api) => {
 	dispatch(requestPosts());
 	const _query = {
 		query: `{
-            allBlogs {
+            blogs {
                 postTitle
-                shortdescription
+                shortDescription
                 slug
-                imageURL
+                imageURL {
+                	url,
+                }
               }
         }`
 	};
@@ -93,9 +112,36 @@ export const fetchPosts = () => async (dispatch, getState, api) => {
 	})
 };
 
+export const fetchServices = () => async (dispatch, getState, api) => {
+	dispatch(requestServices());
+	const _query = {
+		query: `{
+            serviceses {
+                serviceName
+                price
+                imageURL {
+                	url,
+                }
+              }
+        }`
+	};
+
+	await api.post(landingPageAPI, _query).then(response => {
+		dispatch(receiveServices(response));
+	}).catch((err) => {
+		console.log('error', err);
+	})
+};
+
 export const fetchPostsIfNeeded = () => (dispatch, getState) => {
-	if (shouldFetchPosts(getState())) {
+	if (shouldFetch(getState().posts)) {
 		dispatch(fetchPosts());
+	}
+};
+
+export const fetchServicesIfNeeded = () => (dispatch, getState) => {
+	if (shouldFetch(getState().services)) {
+		dispatch(fetchServices());
 	}
 };
 
