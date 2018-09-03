@@ -8,7 +8,6 @@ import ReviewsSlider from '../components/banners/reviews'
 import webConfig from "../../../webConfig"
 import {fetchServices, fetchServicesIfNeeded} from "../actions";
 import {connect} from 'react-redux';
-import RenderHTML from "../components/renderHTML";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 
@@ -30,7 +29,7 @@ class HomePage extends Component {
 		if (!this.props.pageData == false) {
 			return this.props.pageData.map((service, index) => {
 				return (
-					<div key={index} className="col-md-6 col-lg-4">
+					<div key={index} className="col-sm-12 col-md-4">
 						<div className="item_wrap">
 							<div className="img">
 								<img src={`${webConfig.siteURL}/assets/graphics/homePage/case_${index}.jpg`} width="300"
@@ -94,6 +93,7 @@ class HomePage extends Component {
 							<div className="spotlights">
 								<div className="row">
 									{this.renderServices()}
+									<Link className="btn-service" to="/services"><span>Все услуги</span></Link>
 								</div>
 							</div>
 						</div>
@@ -121,7 +121,7 @@ function mapStateToProps(state) {
 	return {
 		pageData: state.services.items ? state.services.items.sort((a, b) => {
 			return Math.random() - 0.5
-		}).slice(0, 3) : state.services.items.slice(0, 3),
+		}).slice(0, 3) : state.services.items,
 		isFetching: state.services.isFetching
 	};
 

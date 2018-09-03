@@ -4,9 +4,69 @@ body.homePage {
 	}
 }
 
-.homePage_wrap {
+.homePage_wrap, .spotlights {
 	width: 100%;
 
+	.btn-service {
+		margin: 2rem auto 0 !important;
+		color:$txtCol !important;
+		border-color: $txtCol !important;
+		text-transform: uppercase;
+		width: 100% !important;
+		&:hover {
+			border-color: $orange !important;
+			color: white !important;
+
+			&::after {
+				width: 100%;
+				@include transition(all .4s ease-in-out);
+			}
+		}
+	}
+	a {
+		position: relative;
+		display: block;
+		font-size: 1.8rem;
+		line-height: normal;
+		color: $white;
+		font-weight: 400;
+		text-align: center;
+		border: 1px solid $white;
+		max-width: 18.0rem;
+		padding: 1.5rem 0;
+		margin: 6rem auto 0;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 100%;
+			background: $orange;
+			@include transition(all .4s ease-in-out);
+			z-index: 1;
+		}
+
+		span {
+			display: block;
+			position: relative;
+			z-index: 2;
+		}
+
+		&:hover {
+			border-color: $orange;
+
+			&::after {
+				width: 100%;
+				@include transition(all .4s ease-in-out);
+			}
+		}
+
+	}
+
+}
 	.hero {
 		position: relative;
 		top: 0;
@@ -64,50 +124,7 @@ body.homePage {
 				text-align: center;
 			}
 
-			a {
-				position: relative;
-				display: block;
-				font-size: 1.8rem;
-				line-height: normal;
-				color: $white;
-				font-weight: 400;
-				text-align: center;
-				border: 1px solid $white;
-				max-width: 18.0rem;
-				padding: 1.5rem 0;
-				margin: 6rem auto 0;
 
-				&::after {
-					content: '';
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 0;
-					height: 100%;
-					background: $orange;
-					@include transition(all .4s ease-in-out);
-					z-index: 1;
-				}
-
-				span {
-					display: block;
-					position: relative;
-					z-index: 2;
-				}
-
-				&:hover {
-					border-color: $orange;
-
-					&::after {
-						width: 100%;
-						@include transition(all .4s ease-in-out);
-					}
-				}
-
-			}
-
-		}
 
 		.pageScroll {
 			position: absolute;

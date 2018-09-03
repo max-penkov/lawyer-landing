@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
 
-const mapState = {center: [55.76, 37.64], zoom: 12};
+const mapState = {center: [55.76, 37.64], zoom: 13};
 
 class MapBasics extends React.Component {
 	constructor(props) {
