@@ -11,7 +11,6 @@ body.homePage {
 		margin: 2rem auto 0 !important;
 		color:$txtCol !important;
 		border-color: $txtCol !important;
-		text-transform: uppercase;
 		width: 100% !important;
 		&:hover {
 			border-color: $orange !important;
@@ -25,6 +24,7 @@ body.homePage {
 	}
 	a {
 		position: relative;
+		text-transform: uppercase;
 		display: block;
 		font-size: 1.8rem;
 		line-height: normal;
