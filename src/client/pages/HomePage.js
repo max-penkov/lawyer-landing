@@ -85,6 +85,24 @@ class HomePage extends Component {
 							<FontAwesomeIcon icon="chevron-down"/>
 						</div>
 					</div>
+					<div className="mt-5 container">
+						<img src={`${webConfig.siteURL}/assets/graphics/homePage/pikunov_main.jpg`}
+							 className="float-md-left mr-md-4 shadow mx-sm-auto d-block rounded"
+							 alt="Пикунов"/>
+						<p className="t">
+							На этой странице я, Пикунов Дмитрий Викторович, адвокат по уголовным делам, представляю
+							группу адвокатов и юристов, оказывающих юридические услуги гражданам и организациям на
+							возмездной основе.
+						</p>
+						<p>Непосредственно я специализируюсь на
+							<strong><u>уголовных делах экономической направленности</u></strong>, а также представляю интересы доверителей в
+							арбитражных судах. Мои коллеги смогут Вам оказать помощь в решении иных вопросов.</p>
+						<p>​Определяющим в отношениях с доверителями для нас является честность, поэтому мы не беремся
+							за "гиблые" дела и, если вашу проблему невозможно решить юридическим путем, то вам об этом
+							так и будет сказано.
+							Формулировки заключаемых с нами соглашений ясны и понятны, а процесс формирования цены
+							прозрачен и предсказуем.</p>
+					</div>
 					<ReactCSSTransitionGroup transitionName="anim" transitionAppear={true}
 											 transitionAppearTimeout={5000} transitionEnter={false}
 											 transitionLeave={false}>

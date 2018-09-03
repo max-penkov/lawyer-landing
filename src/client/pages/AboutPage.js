@@ -28,8 +28,8 @@ class About extends Component {
 							<div className="row">
 								<div className="col">
 									<div className="content_block">
-										<img src={`${webConfig.siteURL}/assets/graphics/aboutPage/pikunov.jpg`}
-											 className="float-md-right shadow mx-sm-auto d-block rounded"
+										<img src={`${webConfig.siteURL}/assets/graphics/aboutPage/pikunov.jpg`} width="250px"
+											 className="float-md-right ml-md-3 shadow mx-sm-auto d-block rounded"
 											 alt="Пикунов"/>
 										<h2>
 											Образование:
