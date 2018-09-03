@@ -8,6 +8,7 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import {fetchServices, fetchServicesIfNeeded} from "../actions";
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBusinessTime} from "@fortawesome/free-solid-svg-icons";
 
 
 // import "react-table/react-table.css";
@@ -88,12 +89,28 @@ class ServicesPage extends Component {
 								data={pageData}
 								columns={[
 									{
-										Header: 'Услуга',
+										Header: () => (
+											<div style={{
+												padding: "5px",
+												borderRadius: "2px",
+												opacity: 0.8
+											}}>
+												<FontAwesomeIcon icon="business-time" style={{marginRight: "5px"}}/>Услуга
+											</div>
+										),
 										accessor: 'serviceName' // String-based value accessors!
 									},
 									{
+										Header: () => (
+											<div style={{
+												padding: "5px",
+												borderRadius: "2px",
+												opacity: 0.8
+											}}>
+												<FontAwesomeIcon icon="dollar-sign" style={{marginRight: "5px"}}/>Цена
+											</div>
+										),
 										maxWidth: '150',
-										Header: 'Цена',
 										accessor: 'price',
 										Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
 									},
