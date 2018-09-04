@@ -5,6 +5,7 @@ import Routes from './client/Routes';
 import renderer from './helpers/renderer';
 import bodyParser from 'body-parser';
 import createStore from './helpers/createStore'
+import nodemailer from 'nodemailer'
 
 const port = process.env.PORT || 3010;
 const app = express();
@@ -46,6 +47,42 @@ app.get(['/*/:param', '*'], (req, res) => {
 	}).catch(error => {
 		console.log(error);
 	});
+});
+
+app.post('/sendmail', (req, response) => {
+
+	var mailer = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+			user: 'locoxmax',
+			pass: 'mnbksbsiw'
+		}
+	});
+
+	mailer.use('compile', hbs({
+		viewPath: 'build/assets/email_templates',
+		extName: '.hbs'
+	}));
+
+	mailer.sendMail({
+		from: '',
+		to: '',
+		subject: 'Contact Form',
+		template: 'contactForm',
+		context: {
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			email: req.body.email,
+			message: req.body.message
+		}
+	}, function(err, res){
+		if(err){
+			console.log(err)
+			response.status(500).send('500 - Internal Server Error')
+		}
+		response.status(200).send('200 - The request has succeeded.')
+	});
+
 });
 
 app.listen(port, () => {
