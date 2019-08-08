@@ -66,7 +66,7 @@ app.post('/sendmail', (req, response) => {
 
 	mailer.sendMail({
 		from: '',
-		to: '',
+		to: 'loco@list.ru',
 		subject: 'Contact Form',
 		template: 'contactForm',
 		context: {
